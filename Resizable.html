@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Ui Resizeable...</title>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/toastr.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/jquery-ui.css">
+	
+	<style type="text/css">
+		.container {
+		    background: gainsboro;
+		    min-height: 625px;
+		    padding-top: 20px;
+		    font-weight: bold;
+		}
+		div.container div{
+		}
+		div.resizable{
+			width: 100px;
+			height: 100px;
+			background-color: #98e598b5;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: red;
+			font-weight: bold;
+			text-shadow: 2px 2px 2px black;
+		}
+		div.containment{
+			width: 300px;
+			height: 300px;
+			border:2px solid rgb(136 141 255 / 82%)
+		}
+		.helper{
+			border:2px dotted green;
+		}
+	</style>
+</head>
+<body>
+	<div class="container mb-5">
+		<div class="table">
+			<table class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th>Start</th>
+						<td><div class="start"></div></td>
+					</tr>
+					<tr>
+						<th>Resize</th>
+						<td><div class="resize"></div></td>
+					</tr>
+					<tr>
+						<th>Stop</th>
+						<td><div class="stop"></div></td>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="resizable" id="resizable"><h5>Resizable</h5></div><br>
+		<div class="resizable" id="animate"><h5>Animate</h5></div><br>
+		<div class="containment">
+			<div class="resizable" id="containment"><h6>Containment</h6></div>
+		</div>
+		<br>
+		<div class="resizable" id="maximun"><h6>Maximun</h6></div>
+	</div>
+	
+
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../cdn/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../cdn/toastr.min.js"></script>
+	<script type="text/javascript" src="../cdn/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			$("#resizable").resizable({ 
+				helper: "helper", aspectRatio:true,
+				start:function (event,ui){
+					$(".start").html(live(event,ui));
+				},
+				resize:function (event,ui){
+					$(".resize").html(live(event,ui));
+				},
+				stop:function (event,ui){
+					$(".stop").html(live(event,ui));
+				}
+			});
+			$("#animate").resizable({animate: true,helper: "helper", ghost: true});
+			$("#containment").resizable({containment: ".containment"});
+			$("#maximun").resizable({
+				maxHeight: 250,
+		        maxWidth: 350,
+		        minHeight: 150,
+		        minWidth: 200
+		    });
+
+		    function live(event,ui){
+		    	var ele = "Width:"+ui.size.width+"<br>";
+		    	ele +="Height:"+ui.size.height;
+		    	return ele;
+		    }
+			
+		})
+	</script>
+</body>
+</html>

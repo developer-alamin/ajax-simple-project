@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Fandamental ToolTip...</title>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/toastr.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/jquery-ui.css">
+	
+	<style type="text/css">
+		.container {
+		    background: gainsboro;
+		    min-height: 625px;
+		    padding-top: 20px;
+		    font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="col-4">
+			<label>Name</label>
+			<input type="text" title="Enter Your Name" class="form-control" placeholder="Enter Your Name">
+		</div>
+		<div class="col-4">
+			<label>Email</label>
+			<input type="email" title="Enter Your Email" class="form-control" placeholder="Enter Your Email">
+		</div>
+		<div class="col-4">
+			<label>Age</label>
+			<input type="number" title="Enter Your Age" class="form-control" placeholder="Enter Your Age">
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../cdn/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../cdn/toastr.min.js"></script>
+	<script type="text/javascript" src="../cdn/jquery-ui.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			 $(document).tooltip({
+			 	track : true,
+			 	 show:{delay: 100,duration :200,effect: "slideDown"},
+ 				 hide:{delay: 100,duration :200,effect: "slideUp"},
+
+			 });
+		});
+
+	</script>
+</body>
+</html>

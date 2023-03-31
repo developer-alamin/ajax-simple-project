@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Fandamental Icrement Slider...</title>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/toastr.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/jquery-ui.css">
+	
+	<style type="text/css">
+		.container {
+		    background: gainsboro;
+		    min-height: 625px;
+		    padding-top: 20px;
+		    font-weight: bold;
+		}
+		.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+		    border: 1px solid #000000;
+		    background: #2435f9 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
+		    font-weight: bold;
+		    color: #31ff23;
+		    border-radius: 100%;
+		}
+
+		.ui-widget-content {
+		    border: 1px solid #dddddd;
+		    background: #70ff4c url(images/ui-bg_highlight-soft_100_eeeeee_1x100.png) 50% top repeat-x;
+		}
+
+
+		.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+		    border: 1px solid #000000;
+		    background: #2435f9 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
+		    font-weight: bold;
+		    color: #31ff23;
+		    border-radius: 100%;
+		    width: 50px;
+		    height: 50px;
+		    display: flex;
+		    top: -20px;
+		    justify-content: center;
+		    align-items: center;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<label>Taka</label>
+		<input type="text" id="amount">
+		<br><br>
+		<div id="slider"></div>
+		<br><br>
+		<div class="slideDiv">
+			<div id="customSlider">
+				<div id="custom-handle" class="ui-slider-handle"></div>
+			</div>
+		</div>
+		<br><br>
+		<label>Multiple Value</label>
+		<input type="text" id="multiple" readonly="">
+		<br><br>
+		<div class="multipleSlider"></div>
+		<br><br>
+		<table>
+			<tr>
+				<th>Minimum:</th>
+				<td><input type="text" id="min"></td>
+			</tr>
+			<tr>
+				<th>Maximum:</th>
+				<td><input type="text" id="max"></td>
+			</tr>
+			
+		</table>
+	</div>
+
+
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../cdn/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../cdn/toastr.min.js"></script>
+	<script type="text/javascript" src="../cdn/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#slider").slider({
+				value:100,
+				min:0,
+				max:1000,
+				step:1,
+				slide:function(event,ui) {
+					$("#amount").val("$"+ui.value);
+				}
+			});
+			$("#amount").val("$"+$("#slider").slider("value"));
+
+
+			var handle = $("#custom-handle");
+			$("#customSlider").slider({
+				create: function() {
+			        handle.text( $( this ).slider( "value" ) );
+			     },
+			      slide: function( event, ui ) {
+			        handle.text( ui.value );
+			      }
+			});
+
+
+
+			$(".multipleSlider").slider({
+				range: true,
+				min:0,
+				max:500,
+				values:[100,150],
+				slide:function(event,ui){
+					$("#multiple").val("$"+ui.values[0]+"-"+"$"+ui.values[1]);
+					$("#min").val("$"+ui.values[0]);
+					$("#max").val("$"+ui.values[1]);
+					
+				}
+			});
+
+			$('#multiple').val("$" +$(".multipleSlider").slider("values",0) + "- $"+$(".multipleSlider").slider("values",1));
+			$("#min").val("$"+$(".multipleSlider").slider("values",0));
+			$("#max").val("$"+$(".multipleSlider").slider("values",0));
+			
+
+		})
+	</script>
+</body>
+</html>

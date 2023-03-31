@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Fandamental ToolTip...</title>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/toastr.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/jquery-ui.css">
+	
+	<style type="text/css">
+		.container {
+		    background: gainsboro;
+		    min-height: 625px;
+		    padding-top: 20px;
+		    font-weight: bold;
+		}
+		.ui-menu{
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="menuDiv">
+			<ul class="menu">
+				<li>Web Developer
+					<ul>
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>PHP</li>
+						<li>LARAVEL</li>
+						<li>MYSQL</li>
+						<li>JQUERY</li>
+					</ul>
+				</li>
+				<li >Marketing
+					<ul>
+						<li>ESO</li>
+						<li>YOUTUBE</li>
+						<li>FACEBOOK</li>
+						<li>LINKEDIN</li>
+						<li>WEBSITE</li>
+					</ul>
+				</li>
+				<li>PHP
+					<ul>
+						<li>Laravel</li>
+						<li>CodeIgniter</li>
+						<li>Symfony</li>
+						<li>Laminas Project</li>
+						<li>Phalcon</li>
+						<li>CakePHP</li>
+						<li>Yii</li>
+						<li>FuelPHP</li>
+						<li>Slim</li>
+						<li>PHPixie</li>
+						<li>Fat-Free Framework</li>
+					</ul>
+				</li>
+				<li>Javascript
+					<ul>
+						<li>Angular</li>
+						<li>React</li>
+						<li>Vue.js</li>
+						<li>Node.js</li>
+						<li>Meteor</li>
+						<li>Underscore.js</li>
+						<li>Anime.js</li>
+						<li>Bideo.js</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../cdn/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../cdn/toastr.min.js"></script>
+	<script type="text/javascript" src="../cdn/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			$(".menu").menu();
+		})
+	</script>
+</body>
+</html>

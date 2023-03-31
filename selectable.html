@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Ui Selectable...</title>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/toastr.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/jquery-ui.css">
+	
+	<style type="text/css">
+		div.container {background: gainsboro;min-height: 625px;padding-top: 20px;font-weight: bold;}
+		li {display: inline-block;padding: 5px;border: 2px solid #8c8cff;color: #4e9132;font-size: 21px;border-radius: 4px;margin: 2px;}
+		li.ui-selected{
+			background-color: red;
+			color: white;
+		}
+		li.ui-selecting{
+			background-color: green;
+			color: white;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container mb-5">
+		<ul class="SelectableItem">
+			<li>Alamin</li>
+			<li>Maruf</li>
+			<li>Sojib</li>
+			<li>Mijan</li>
+			<li>Mofijul</li>
+			<li>Nahid</li>
+			<li>Rohim</li>
+			<li>Korim</li>
+		</ul>
+		<div class="contentShow">
+			<h4>Select List Show...</h4>
+			<div class="show"></div>
+		</div>
+	</div>
+	
+
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../cdn/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../cdn/toastr.min.js"></script>
+	<script type="text/javascript" src="../cdn/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			$(".SelectableItem").selectable({
+				stop:function() {
+					var output = ""
+					$(".ui-selected").each(function(){
+						output += $(this).text()+"<br>";
+					});
+					$(".show").html(output);
+				}
+			});
+		})
+	</script>
+</body>
+</html>

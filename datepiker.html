@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Ui Datepiker...</title>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/toastr.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/jquery-ui.css">
+	
+	<style type="text/css">
+		div.container {background: gainsboro;min-height: 625px;padding-top: 20px;font-weight: bold;}
+	</style>
+</head>
+<body>
+	<div class="container ">
+		<label>Date :</label>
+		<input type="text" class="datepiker form-control col-4 " placeholder="mm/dd/yy">
+		<input type="text" class="adddatepiker form-control col-4 " placeholder="MM/DD/YY">
+		
+		<br>
+		<button type="submit" class="Check form-control col-3">Check</button>
+	</div>
+	
+
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../cdn/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../cdn/toastr.min.js"></script>
+	<script type="text/javascript" src="../cdn/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.datepiker').datepicker({
+				changeMonth: true,
+     			 altFormat: "DD, d mm, yy",
+     			  altField: ".adddatepiker",
+			});
+
+			$('.Check').click(function() {
+				var date = $('.adddatepiker').val();
+				alert(date);
+			})
+		})
+	</script>
+</body>
+</html>

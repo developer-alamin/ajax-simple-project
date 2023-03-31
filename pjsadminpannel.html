@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PJS</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<style type="text/css">
+
+		img{
+			width: 40px;
+			height: 40px;
+			border-radius: 100%;
+		}
+		.sitebar {
+		    width: 250px;
+		    background: white;
+		    position: fixed;
+		    height: 100%;
+		}
+
+		body {
+		    background: #e9e9e9;
+		}
+
+		a.pjsImgTitle {
+		    background: #999999;
+		    display: flex;
+		    padding: 5px;
+		    align-items: center;
+		}
+
+		a.pjsImgTitle span {
+		    font-size: 25px;
+		    color: white;
+		    margin-left: 12px;
+		}
+
+		a:hover {
+		    text-decoration: none;
+		}
+
+		li {
+		    list-style-type: none;
+		    margin-left: -37px;
+		    margin-bottom: 3px;
+		    padding-left: 12px;
+		}
+
+		ul.topMenuBar li a {font-size: 24px;color: #6275ff;}
+
+		ul.topMenuBar li a i {
+		    font-size: 30px;
+		}
+
+		li:hover {
+		    background: #e8e0ff;
+		    cursor: pointer;
+		    border-left: 4px solid #416eb1;
+		    transition: all  ease;
+		}
+
+		section.content {
+		    width: calc(100% - 250px);
+		    position: relative;
+		    left: 250px;
+		    transition: 0.0s ease;
+		}
+
+		nav {
+		    background: #d4dbff;
+		    display: flex;
+		    align-items: center;
+		    padding: 5px;
+		}
+
+		i.bx.bx-menu {
+		    font-size: 30px;
+		    margin-right: auto;
+		    cursor: pointer;
+		}
+		.sitebar.hide{
+			width: 60px;
+		}
+		.sitebar.hide ~ .content{
+			width:calc(100% - 60px);
+			left: 60px;
+		}
+		.sitebar.hide .mainContent{
+			width:calc(100% - 60px);
+			left: 60px;
+		}
+		.sitebar.hide .topMenuBar li a {
+		    display: flex;
+		}
+
+		.sitebar.hide .topMenuBar li a span {
+		    font-size: 6px;
+		    opacity: 0;
+		}
+		.sitebar.hide  a span {
+		    font-size: 6px;
+		    opacity: 0;
+		}
+
+		.sitebar.hide .topMenuBar li:hover {
+		    background:none;
+		    padding-top: 2px;
+		    padding-bottom: 2px;
+		    border-left: none;
+		}
+
+
+		ul.topMenuBar {
+		    margin-top: 10px;
+		}
+		.sitebar.hide .topMenuBar li {
+		    margin-bottom: 10px;
+		    position: relative;
+		}
+	   .sitebar.hide .topMenuBar li:hover::before {content: "";position: absolute;width: 5px;height: 5px;background: #ff0053;border-radius: 100%;left: 2px;top: 15px;}
+	
+	   i.fa-solid.fa-address-card.Register {
+		    font-size: 26px;
+		}
+		i.bx.bxs-log-out-circle.Logout {
+		    position: relative;
+		    top: 6px;
+		}
+
+
+		.sitebar.hide .topMenuBar li.Logout:hover::before{
+			top: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<section class="sitebar">
+		<a href="" class="pjsImgTitle">
+			<img src="../img/user.jpg">
+			<span>PJS</span>
+		</a>
+		<ul class="topMenuBar">
+			<li>
+				<a href="">
+					<i class="fa-solid fa-gauge"></i>
+					<span>Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fa-solid fa-address-card Register"></i>
+					<span>Register</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fas fa-duotone fa-dice-five"></i>
+					<span>Class Five</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fas fa-regular fa-dice-six"></i>
+					<span>Class Six</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fas fa-regular fa-dice-six"></i>
+					<span>Class Seven</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fas fa-regular fa-dice-six"></i>
+					<span>Class Eight</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fas fa-regular fa-dice-six"></i>
+					<span>Class Nine</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fas fa-regular fa-dice-six"></i>
+					<span>Class Ten</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fas fa-regular fa-dice-six"></i>
+					<span>Class ssc</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fas fa-regular fa-dice-six"></i>
+					<span>Class Collage</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fas fa-regular fa-dice-six"></i>
+					<span>Class HSC</span>
+				</a>
+			</li>
+			<li class="Logout">
+				<a href="" class="Logout">
+					<i class='bx bxs-log-out-circle Logout'></i>
+					<span class="Logout">Logout</span>
+				</a>
+			</li>
+			<li>
+				<a class="dark">
+					
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="content">
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Mithon</a>
+			<a href="#" class="profile">
+				<img src="../img/user.jpg">
+			</a>
+		</nav>
+		<main class="mainContent">
+			<div class="container-fluid">
+				<h4>This First Page...</h4>	
+			</div>
+		</main>
+	</section>
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".bx-menu").click(function() {
+				$(".sitebar").toggleClass("hide");
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Ui Background Color...</title>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/toastr.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/jquery-ui.css">
+	
+	<style type="text/css">
+		div.container {background: gainsboro;min-height: 625px;padding-top: 20px;font-weight: bold;}
+		div.backgroundDiv {width: 600px;margin: auto;border: 2px solid black;padding: 10px;text-align: justify;border-radius: 4px;}
+		button#animate { border: 2px solid #8d28ff;font-weight: bold;color: green;border-radius: 10px;}
+	</style>
+</head>
+<body>
+	<div class="container mb-5">
+		<button id="animate">Animate</button>
+		<div class="backgroundDiv">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+	</div>
+	
+
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../cdn/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../cdn/toastr.min.js"></script>
+	<script type="text/javascript" src="../cdn/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var falseVar = false;
+			$('#animate').click(function() {
+				var element = $(".backgroundDiv");
+
+				if (falseVar) {
+					element.animate({
+						"background-color":"gray",
+						'width':'300px',
+						'color':'white'
+					},1500,'swing',function() {
+						swal("Success", "Your Animate Completed", "success");
+					})
+				}else {
+					element.animate({
+						"background-color":"green",
+						'width':'800px'
+					},1500,'swing',function() {
+						swal("Success", "Your Animate Completed", "success");
+					})
+				}
+				falseVar = !falseVar;
+			})
+		})
+	</script>
+</body>
+</html>

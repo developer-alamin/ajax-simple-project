@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Fandamental Icrement Slider...</title>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/toastr.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/jquery-ui.css">
+	
+	<style type="text/css">
+		.container {
+		    background: gainsboro;
+		    min-height: 625px;
+		    padding-top: 20px;
+		    font-weight: bold;
+		}
+	
+		.ui-widget-content {
+		    border: 1px solid #dddddd;
+		    background: #70ff4c url(images/ui-bg_highlight-soft_100_eeeeee_1x100.png) 50% top repeat-x;
+		    bottom: 10px;
+		}
+
+
+		.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+		    border: 1px solid #000000;
+		    background: #2435f9 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
+		    font-weight: bold;
+		    color: #31ff23;
+		    border-radius: 100%;
+		}
+		div.RangeImgDiv img{
+			width: 100px;
+			height: 100px;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="width"></div><br><br>
+		<div class="height"></div><br><br>
+		<div class="radius"></div><br><br>
+		<div class="opacity"></div><br><br>
+		
+		<br><br>
+		<div class="showRange"></div><br><br>
+		<div class="RangeImgDiv">
+			<img src="../img/profile.jpg" id="RangeImg">
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../cdn/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../cdn/toastr.min.js"></script>
+	<script type="text/javascript" src="../cdn/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.width , .height,.radius').slider({
+				min:100,
+				max:500,
+				slide:control
+			});
+			$('.opacity').slider({
+				min:0,
+				max:100,
+				value:100,
+				slide:control
+			});
+
+
+			function control() {
+				var width = $(".width").slider("value");
+				var height = $(".height").slider("value");
+				var radius = $(".radius").slider("value");
+				var opacity = $(".opacity").slider("value");
+
+				$("#RangeImg").css({"width":width,"height":height,"border-radius":radius+"px","opacity":opacity/100});
+				$(".showRange").html(
+					"Width : "+width+" px"+"<br>Height :"+height+" px"+"<br> Radius :"+radius+" px <br>"+"opacity : "+opacity/100);
+			}
+		})
+	</script>
+</body>
+</html>

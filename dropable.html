@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Fandamental Dropable Widgets...</title>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/toastr.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/jquery-ui.css">
+	
+	<style type="text/css">
+		.container {
+		    background: gainsboro;
+		    padding-top: 20px;
+		}
+
+		.box {
+		    display: inline-table;
+		    width: 355px;
+		    border: 2px solid rgb(211 255 205 / 59%);
+		    margin: 5px;
+		}
+
+		h4 {
+		    font-family: auto;
+		    margin: 5px;
+		    font-weight: bold;
+		}
+
+		hr {
+		    border: 1px solid #d1caca;
+		    width: 90%;
+		}
+
+		li {
+		    font-weight: bold;
+		    font-family: auto;
+		}
+		strong.strong{
+			background: rgb(157,255,0,70%);
+		    padding: 10px;
+		    color: white;
+		}
+		.activeClass{
+			background: #8ac944;
+    		color: white;
+		}
+		.javactiveClass{
+			background: hotpink;
+    		color: white;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="box phpjavaframworkDiv">
+			<h4>PHP And Javascript Framwork</h4>
+			<hr>
+			<ul id="allFramworkList">
+				<li data-value="php">Laravel</li>
+				<li data-value="php">CodeIgniter</li>
+				<li data-value="php">Symfony</li>
+				<li data-value="php">Laminas Project</li>
+				<li data-value="php">Phalcon</li>
+				<li data-value="php">CakePHP</li>
+				<li data-value="php">Yii</li>
+				<li data-value="php">FuelPHP</li>
+				<li data-value="php">Slim</li>
+				<li data-value="php">PHPixie</li>
+				<li data-value="php">Fat-Free Framework</li>
+				<li data-value="java">Angular</li>
+				<li data-value="java">React</li>
+				<li data-value="java">Vue.js</li>
+				<li data-value="java">Node.js</li>
+				<li data-value="java">Meteor</li>
+				<li data-value="java">Underscore.js</li>
+				<li data-value="java">Anime.js</li>
+				<li data-value="java">Bideo.js</li>
+			</ul>
+		</div>
+		<div class="box phpFramwork">
+			<h4>PHP Framewok List</h4><hr>
+			<ul id="phpList">
+				
+			</ul>
+		</div>
+		<div class="box javascriptFramework">
+			<h4>Javascript Framework List</h4><hr>
+			<ul id="java">
+				
+			</ul>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../cdn/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../cdn/toastr.min.js"></script>
+	<script type="text/javascript" src="../cdn/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#allFramworkList li").draggable({
+				helper:function(){
+					return "<strong class='strong'>"+$(this).text()+"</strong>";
+				},
+				revert:"invalid"
+			});
+
+			$(".phpFramwork").droppable({
+				accept:"li[data-value='php']",
+				activeClass:'activeClass',
+				drop:function(event,ui){
+					$('#phpList').append(ui.draggable);
+				}
+			});
+
+
+			$(".javascriptFramework").droppable({
+				accept:"li[data-value='java']",
+				activeClass:'javactiveClass',
+				drop:function(event,ui){
+					$('#java').append(ui.draggable);
+				}
+			});
+
+			
+		})
+	</script>
+</body>
+</html>

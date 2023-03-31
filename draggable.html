@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Fandamental Icrement Slider...</title>
+	<link rel="stylesheet" type="text/css" href="../cdn/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/toastr.css">
+	<link rel="stylesheet" type="text/css" href="../cdn/jquery-ui.css">
+	
+	<style type="text/css">
+		.container {
+		    background: gainsboro;
+		    padding-top: 20px;
+		}
+
+		.dragDiv {
+		    width: 100px;
+		    height: 100px;
+		    background: greenyellow;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		}
+		img{
+			width: 100px;
+			height: 100px;
+		}
+		div.axisDiv{
+			width: 600px;
+			height: 400px;
+			border:2px solid green;
+			display: flex;
+		}
+		div.vartically{
+			width: 100px;
+			height: 100px;
+			background-color: green
+		}
+		div.horizontally{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+		div{
+			color: white;
+			font-weight: bold;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<img class="dragImg" src="../img/profile.jpg">
+		<img class="dragImg" src="../img/Mofijul.jpg">
+		<img class="dragImg" src="../img/maruf.jpg">
+		<img class="dragImg" src="../img/mijan.jpg">
+		<img class="dragImg" src="../img/sojib.jpg">
+		<br><br>
+		<div class="axisDiv draggable ui-widget-content">
+			<div class="vartically">vartically</div>
+			<div class="horizontally">horizontally</div>
+		</div>
+		<br><br>
+		<ul>
+			<li id="draggable" class="ui-state-highlight">Drag me down</li>
+		</ul>
+		<ul id="sortable">
+			<li class="ui-state-default">Item 1</li>
+			<li class="ui-state-default">Item 2</li>
+			<li class="ui-state-default">Item 3</li>
+			<li class="ui-state-default">Item 4</li>
+			<li class="ui-state-default">Item 5</li>
+		</ul>
+	</div>
+
+
+	<script type="text/javascript" src="../cdn/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../cdn/popper.min.js"></script>
+	<script type="text/javascript" src="../cdn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../cdn/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../cdn/toastr.min.js"></script>
+	<script type="text/javascript" src="../cdn/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".dragImg").draggable({
+				scroll: true,
+				cursor: "move",
+				scrollSensitivity: 100
+			});
+
+			$(".axisDiv").draggable({
+				scroll: true,
+				cursor: "move",
+				scrollSensitivity: 100
+			});
+
+			$('.vartically').draggable({
+				axis: "y",
+				cursor: "move" 
+			});
+
+			$('.horizontally').draggable({
+				axis: "x",
+				cursor: "move" 
+			});
+
+			 $( "#sortable" ).sortable({
+		      revert: true
+		    });
+
+			 $( "#draggable" ).draggable({
+		      connectToSortable: "#sortable",
+		      helper: "clone",
+		      revert: "invalid"
+		    });
+			 $( "ul, li" ).disableSelection();
+		})
+	</script>
+</body>
+</html>
